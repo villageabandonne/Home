@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xffffff);
@@ -10,26 +10,35 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 renderer.setAnimationLoop( animate );
 document.body.appendChild( renderer.domElement );
 
-const geometry = new THREE.TetrahedronGeometry(1);
+const loader = new GLTFLoader();
 
-const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-const cube = new THREE.Mesh( geometry, material );
-scene.add( cube );
+let pyramid;
 
-const edges = new THREE.EdgesGeometry(geometry);
-const line = new THREE.LineSegments(
-    edges,
-    new THREE.LineBasicMaterial({ color: 0x000000 })
-);
-cube.add(line);
+loader.load( 'static/pyramid.glb', function ( gltf ) {
+    console.log(gltf)
+    pyramid = gltf.scene;
+    pyramid.traverse((child) => {
+        if (child.isMesh) {
+            child.material = new THREE.MeshBasicMaterial({color: 0x00ff00});
+            const edges = new THREE.EdgesGeometry(child.geometry);
+            const lines = new THREE.LineSegments(
+                edges,
+                new THREE.LineBasicMaterial({ color: 0x000000 })
+            );
+            child.add(lines);
+        }
+    });
+    scene.add( pyramid );
+}, undefined, function ( error ) {
+    console.error( error );
+} );
 
-camera.position.z = 5;
+camera.position.z = 8;
+camera.position.y = 1.5;
 
 function animate() {
-
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
-
+    if (pyramid) {
+        pyramid.rotation.y += 0.01;
+    }
     renderer.render( scene, camera );
-
 }
