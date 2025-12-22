@@ -8,7 +8,8 @@ const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.inner
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 renderer.setAnimationLoop( animate );
-document.body.appendChild( renderer.domElement );
+const container = document.getElementById('startPage');
+container.appendChild(renderer.domElement);
 
 const loader = new GLTFLoader();
 
@@ -20,12 +21,6 @@ loader.load( 'static/pyramid.glb', function ( gltf ) {
     pyramid.traverse((child) => {
         if (child.isMesh) {
             child.material = new THREE.MeshBasicMaterial({color: 0x00ff00});
-            const edges = new THREE.EdgesGeometry(child.geometry);
-            const lines = new THREE.LineSegments(
-                edges,
-                new THREE.LineBasicMaterial({ color: 0x000000 })
-            );
-            child.add(lines);
         }
     });
     scene.add( pyramid );
