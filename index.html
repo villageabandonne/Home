@@ -44,7 +44,12 @@
         .hidden {
             display: none;
         }
-
+        .art-frame {
+            width: 100%;
+            height: 100vh;
+            border: none;
+        }
+        #artPage { position: relative; }
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
@@ -54,16 +59,24 @@
     <div class="newPage">
         <div class="h-container" id="slider">
             <section class="h-page" id="artPage">
-                <button class="btn btn-primary back">back</button>
+                <button class="border-0 back position-absolute top-0 end-0 me-3 mt-4 p-2"
+                        style="z-index: 5; text-decoration:none; padding:0.2rem 0.5rem; background:#000; color:#02ff00;">
+                    back
+                </button>
+                <iframe
+                        src="artPage.html"
+                        class="art-frame"
+                        frameborder="0">
+                </iframe>
             </section>
             <section class="h-page">
                 <h1 id="titre">ART PROJECT IN ABANDONED VILLAGE</h1>
                 <div class="row mt-5 pt-5">
                     <div class="col d-flex justify-content-center align-items-center">
-                        <button class="btn btn-primary" id="art">art</button>
+                        <button id="art" style="z-index: 5; text-decoration:none; background:#000; color:#02ff00;">art</button>
                     </div>
                     <div class="col d-flex justify-content-center align-items-center">
-                        <button class="btn btn-primary" id="tech">tech</button>
+                        <button id="tech" style="z-index: 5; text-decoration:none; background:#000; color:#02ff00;">tech</button>
                     </div>
                 </div>
             </section>

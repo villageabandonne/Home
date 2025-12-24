@@ -19,83 +19,114 @@
       #text h3 {
         scroll-margin-top: 6vh;
       }
-      #linkedContainers {
-        position: relative;
-      }
       .link-line {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100vh;
+        /*position: absolute;*/
+        /*top: 0;*/
+        /*left: 0;*/
+        /*width: 100%;*/
+        /*height: 100%;*/
+        /*pointer-events: none;*/
       }
-
       .link-line line {
-        stroke: lightgray;
+        stroke: #eeeeee;
         stroke-width: 1;
       }
+      .link-line line.active {
+        stroke: #02ff00;
+      }
       .left-scroll{
-        height: 100%;
-        overflow-y: auto;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
+        width: 50%;
+        /*margin-right: 50vw;*/
+      /*  height: 100%;*/
+      /*  overflow-y: auto;*/
+      /*  scrollbar-width: none;*/
+      /*  -ms-overflow-style: none;*/
+      }
+      /*.left-scroll::-webkit-scrollbar {*/
+      /*  display: none;*/
+      /*}*/
+      .right-fixed{
+        position: fixed;
+        top: 20%;
+        right: 5%;
+      }
+      .right-fixed p {
+        margin: 5px;
+      }
+      .hookLeft {
+        display: inline-block;
+        width: 1px;
+        height: 10px;
+      }
+      .hookRight {
+      }
+      .highlight {
+        background: #eeeeee;
+        /*background: #02ff00;*/
+      }
+      .highlight.active {
+        background: #02ff00;
+      }
+      .highlightRight {
+        background: #eeeeee;
+        /*font-weight: bold;*/
+      }
+      .highlightRight.active {
+        background: #02ff00;
+        font-weight: bold;
       }
 
-      .left-scroll::-webkit-scrollbar {
-        display: none;
-      }
-      .right-fixed{
-        height: 100%;
-      }
     </style>
 </head>
 <body>
-<div id="toc" class="d-flex gap-4 align-items-center px-3" style="background: #fff; height: 5vh; width: 100%; position: fixed; top: 0; z-index: 999; overflow-x: auto; white-space: nowrap;">
-  <button class="border-0 back position-fixed end-0 me-3" style="text-decoration: none; padding: 0.2rem 0.5rem; background: #000; color: #02ff00">back</button>
+<div id="toc" class="d-flex gap-4 align-items-center px-3" style="background: #fff; height: 10vh; width: 100%; position: fixed; top: 0; z-index: 999; overflow-x: auto; white-space: nowrap;">
+<!--  <button class="border-0 back position-fixed end-0 me-3 back" style="text-decoration: none; padding: 0.2rem 0.5rem; background: #000; color: #02ff00">back</button>-->
 </div>
 
-<h1 class="mt-5 pt-5">artistic part</h1>
+<h1 class="mt-5 pt-5 pb-5" style="z-index: 100; background: #fff;">artistic part</h1>
 
-<div class="container-fluid vh-100">
+<div class="container-fluid vh-100 mt-0 pt-0">
   <div class="row h-100 container mt-0 pt-0 m-5 p-5" id="linkedContainers">
-    <div class="col left-scroll container m-4 p-4" id="text" >
-
-      <p>it is my first <tag id="leftWord">pyramid</tag>. it is the skeleton of a pyramid without skin, with all its organs easily visible.</p>
+    <div class="col-6 left-scroll container mt-0 pt-0 m-4 p-4" id="text" >
+    <p>it is my first <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span>. it is the skeleton of a <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span> without skin, with all its organs easily visible.</p>
 
     <p>the skeleton is made of concrete beams, assembled in the most constructively stable geometric form, the tetrahedron. its organs are made of recovered objects suspended at its center. this object is conceived and built by myself with my six friends, who agreed to go to a semi-abandoned village to build something completely useless, working for free six hours a day in 35-degree heat.</p>
 
-    <h3>pyramid as a symbol</h3>
+    <h3><span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span> as a symbol</h3>
 
-    <p>why did i choose this form? why a pyramid? there are a few statements that seem to be shared at an unconscious level across all cultures, among all the people who have built pyramids since prehistory.</p>
+    <p>why did i choose this form? why a <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span>? there are a few statements that seem to be shared at an unconscious level across all cultures, among all the people who have built <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span>s since prehistory.</p>
 
-    <ol>1. the pyramid connects the world of humans and the other world</ol>
-    <ol>2. the pyramid is always built for a reason</ol>
-    <ol>3. the pyramid affirms universal order</ol>
+    <ol>1. the <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span> connects the world of humans and the other world</ol>
+    <ol>2. the <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span> is always built for a reason</ol>
+    <ol>3. the <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span> affirms universal order</ol>
 
-    <p>as Mark Lehner, an American egyptologist and archaeologist, said, the pyramid represents humanity’s closest approach, through architecture, to creating the illusion of transcending its human condition.</p>
+    <p>as Mark Lehner, an American egyptologist and archaeologist, said, the <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span> represents humanity’s closest approach, through architecture, to creating the illusion of transcending its human condition.</p>
 
-    <p>a pyramid is always born from interactions between people, materials, and ideas. in my artistic practice, i explore my interactions with materials and with other people. i also explore human fragility, its existence and the end of this existence on earth, through what i call new spirituality. it was therefore important for me to use this common divine symbol shared by multiple cultures and inscribed in the collective human consciousness. the (pyramids of Giza)#1, the (pyramid of Chichen Itza)#2, (Etemenanki)#3, (the Kurgans)#4, (the mausoleum of emperor Qin)#5, (els Castells)#6 in Catalonia.</p>
+    <p>a <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span> is always born from interactions between people, materials, and ideas. in my artistic practice, i explore my interactions with materials and with other people. i also explore human fragility, its existence and the end of this existence on earth, through what i call new spirituality. it was therefore important for me to use this common divine symbol shared by multiple cultures and inscribed in the collective human consciousness. the (<span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span>s of Giza)#1, the (<span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span> of Chichen Itza)#2, (Etemenanki)#3, (the Kurgans)#4, (the mausoleum of emperor Qin)#5, (els Castells)#6 in Catalonia.</p>
 
-    <p>in mythology and religion, this architectural impulse upward is also present. (the tower of Babylon)#7, and similar tales, are found in folklore all over the world. the representation of this symbol continues in modern times: from (the Eiffel tower)#8 and (the Louvre pyramid)#9 to the capital of postmodernism, Las Vegas, there is the famous (Luxor hotel-casino)#10.</p>
+    <p>in mythology and religion, this architectural impulse upward is also present. (the tower of Babylon)#7, and similar tales, are found in folklore all over the world. the representation of this symbol continues in modern times: from (the Eiffel tower)#8 and (the Louvre <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span>)#9 to the capital of postmodernism, Las Vegas, there is the famous (Luxor hotel-casino)#10.</p>
 
-    <p>pyramids are also found in modern mythologies: (pyramidology)#11, (the Golod pyramids)#12 in Russia, all the theories about pyramids that already exist and objects that are not pyramids but that people believe to be ((the “pyramids” of the Kola peninsula)#13, for example).</p>
+    <p><span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span>s are also found in modern mythologies: (<span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span>ology)#11, (the Golod <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span>s)#12 in Russia, all the theories about <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span>s that already exist and objects that are not <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span>s but that people believe to be ((the “<span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span>s” of the Kola peninsula)#13, for example).</p>
 
-    <p>this symbol is also used by contemporary artists. (Paul Thek)#14 often uses this leitmotif to construct his personal mythology. (Sol Lewitt)#15 gives instructions on how to build a pyramid to others, just like a pharaoh or an ancient architect. (Michael Heizer)#16 builds a hidden sacred city inspired by mastabas.</p>
+    <p>this symbol is also used by contemporary artists. (Paul Thek)#14 often uses this leitmotif to construct his personal mythology. (Sol Lewitt)#15 gives instructions on how to build a <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span> to others, just like a pharaoh or an ancient architect. (Michael Heizer)#16 builds a hidden sacred city inspired by mastabas.</p>
 
-    <p>the japanese collective The Play built a wooden pyramid topped with a copper lightning rod, first installed on the summit of mount Jubu for their performance (Thunder (1977))#17. they waited in vain for several years for lightning to strike this pyramid, gathering every summer in the hope of seeing it happen.</p>
+    <p>the japanese collective The Play built a wooden <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span> topped with a copper lightning rod, first installed on the summit of mount Jubu for their performance (Thunder (1977))#17. they waited in vain for several years for lightning to strike this <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span>, gathering every summer in the hope of seeing it happen.</p>
 
-    <p>all of this creates a certain force of this symbol. for me, using it means referring at the same time to everything i have described above. also, this whole accumulation of meanings continuing over centuries creates an effect that goes beyond conscious understanding and enters into a somewhat “magical” effect, revealing in each viewer a sensation that may resemble what a traveler to Ancient Greece might have felt when seeing the pyramids of Giza for the first time.</p>
+    <p>all of this creates a certain force of this symbol. for me, using it means referring at the same time to everything i have described above. also, this whole accumulation of meanings continuing over centuries creates an effect that goes beyond conscious understanding and enters into a somewhat “magical” effect, revealing in each viewer a sensation that may resemble what a traveler to Ancient Greece might have felt when seeing the <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span>s of Giza for the first time.</p>
 
     <h3>location</h3>
 
-    <p>the location of each pyramid has always been an important aspect, its interaction with its surroundings.</p>
+    <p>the location of each <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span> has always been an important aspect, its interaction with its surroundings.</p>
 
-    <p>my pyramid is a site-specific artwork. it is located in Tedos, a village in Galicia, Spain, which was almost abandoned after the industrial revolution. one kilometer away there is another village built later for builders of a (hydroelectric power plant)#18. the last house was abandoned about ten years ago. it now has three habitable houses, one of which belongs to my father.</p>
+    <p>my <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span> is a site-specific artwork. it is located in Tedos, a village in Galicia, Spain, which was almost abandoned after the industrial revolution. one kilometer away there is another village built later for builders of a (hydroelectric power plant)#18. the last house was abandoned about ten years ago. it now has three habitable houses, one of which belongs to my father.</p>
 
     <p>all around this territory, there are (Roman ruins)#19. i find it interesting to place an extraterrestrial object in a place that people have left several times.</p>
 
-    <p>the pyramid is located in the main square of the village, between a water spring and the (village church)#20. the inhabitants are therefore forced to see the pyramid every day. such an important location suggests a cult of the pyramid spread within the village. it also enters into dialogue with the church, emphasizing its sacred significance.</p>
+    <p>the <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span> is located in the main square of the village, between a water spring and the (village church)#20. the inhabitants are therefore forced to see the <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span> every day. such an important location suggests a cult of the <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span> spread within the village. it also enters into dialogue with the church, emphasizing its sacred significance.</p>
 
     <h3>material</h3>
 
@@ -103,11 +134,11 @@
 
     <p>at first, it was an unconscious choice – as a student, i could not afford to buy new materials. later, this pushed me to look more closely at what i use. i began to find the materials i use more precious, more interesting. a brand-new plank that comes from a store has no story to tell. a plank taken from a pallet does. it is old. it has seen this world. it may have traveled through several countries. it has met many people. it has seen the sea, the mountains, the road, the city. each episode of its life has left a trace on it – a crack, a stain, a deformation. an object made from recycled materials is an assembly of stories, brought together at their end with my own story.</p>
 
-    <p>in pyramid 1, i decided to combine recycled materials with new ones. first, this creates tension, an interaction between different eras, different textures. pieces of a wheel from a nineteenth-century cart enter into dialogue with concrete beams made a month ago. they begin to live a new story by aging together. i seek eternal meaning in the ephemeral object.</p>
+    <p>in <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span> 1, i decided to combine recycled materials with new ones. first, this creates tension, an interaction between different eras, different textures. pieces of a wheel from a nineteenth-century cart enter into dialogue with concrete beams made a month ago. they begin to live a new story by aging together. i seek eternal meaning in the ephemeral object.</p>
 
-    <p>the choice of concrete as the material for the pyramid was conscious.</p>
+    <p>the choice of concrete as the material for the <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span> was conscious.</p>
 
-    <p>this material has been used in construction since prehistory. the pyramids of Giza were built using the ancestor of modern concrete.</p>
+    <p>this material has been used in construction since prehistory. the <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span>s of Giza were built using the ancestor of modern concrete.</p>
 
     <p>reinforced concrete as it exists in construction is a fairly recent invention, from the end of the nineteenth century. this type of material refers to the boom of reinforced concrete at the beginning of the twentieth century.</p>
 
@@ -117,25 +148,25 @@
 
     <p>the kinetic part, the interior part, was made at the very end of the creation process, made with recycled materials and elements made of concrete. it was made in a few hours. nevertheless, it is an integral part of the work. </p>
 
-    <p>i was alone finishing my creation; we had fallen behind and everyone had to leave right after we finished the concrete part. for me, it was important to remain alone, to be alone to breathe a soul into this still non-living pyramid.</p>
+    <p>i was alone finishing my creation; we had fallen behind and everyone had to leave right after we finished the concrete part. for me, it was important to remain alone, to be alone to breathe a soul into this still non-living <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span>.</p>
 
-    <p>this part is an assembly of recovered objects suspended in the middle of the pyramid and hanging along the axis of symmetry of the pyramid down to the ground. for the viewer, this can therefore represent the organs of the pyramid, being a rather organic form contrasting with the rest of the purely geometric structure. could this be an answer to the question that has always interested humans: what is inside the pyramids?</p>
+    <p>this part is an assembly of recovered objects suspended in the middle of the <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span> and hanging along the axis of symmetry of the <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span> down to the ground. for the viewer, this can therefore represent the organs of the <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span>, being a rather organic form contrasting with the rest of the purely geometric structure. could this be an answer to the question that has always interested humans: what is inside the <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span>s?</p>
 
-    <p>it represents at the same time the radical sincerity of this pyramid, which hides nothing and exhibits everything it has.</p>
+    <p>it represents at the same time the radical sincerity of this <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span>, which hides nothing and exhibits everything it has.</p>
 
-    <p>my sincerity speaks through the sincerity of my creation. my soul and the soul of my pyramid oscillate in the wind.</p>
+    <p>my sincerity speaks through the sincerity of my creation. my soul and the soul of my <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span> oscillate in the wind.</p>
 
     <h3>team</h3>
 
-    <p>unlike the kinetic part, the pyramidal structure was only achievable with the participation of my friends.</p>
+    <p>unlike the kinetic part, the <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span>al structure was only achievable with the participation of my friends.</p>
 
     <p>although the work is under my authorship, it is composed of the efforts of seven heroes. at the beginning, no one believed that we could build an object weighing more than one ton and 4 meters high.</p>
 
     <p>we had to design, draw, and think together a lot. we were changing the technical project many times during the construction. we gradually understood that handling and assembling concrete beams weighing 40 kilograms each is not so easy. we therefore had to develop new technical plan, described in the technical report. i realized that the beauty of a solution to a mathematical problem is equal to the beauty of a painting. mathematical beauty gives rise to aesthetic beauty.</p>
 
-    <p>the emotions caused by assembling three concrete beams together are comparable in strength to the emotions caused by the contemplation of the whole pyramid.</p>
+    <p>the emotions caused by assembling three concrete beams together are comparable in strength to the emotions caused by the contemplation of the whole <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span>.</p>
 
-    <p>the fact that in only ten days seven ordinary people were able to conceive a 1 ton structure impresses me. for the ten days of construction, all participants canceled their daily lives in order to devote themselves completely to the pyramid. a composer with a mathematician prepared the concrete. an engineering student and a phd candidate in informatics cut and drilled the concrete beams, a phd candidate in experimental linguistics and a linguistics student prepared our meals. there is a lot of beauty in the fact that people can enter a life logic of waking up at 7 am, enduring three hours of labor, napping, working again, going to bed and redoing this all 7 days in a row. i believe that in each of us sleeps a prehistoric human, who awakens when placed in the right context.</p>
+    <p>the fact that in only ten days seven ordinary people were able to conceive a 1 ton structure impresses me. for the ten days of construction, all participants canceled their daily lives in order to devote themselves completely to the <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span>. a composer with a mathematician prepared the concrete. an engineering student and a phd candidate in informatics cut and drilled the concrete beams, a phd candidate in experimental linguistics and a linguistics student prepared our meals. there is a lot of beauty in the fact that people can enter a life logic of waking up at 7 am, enduring three hours of labor, napping, working again, going to bed and redoing this all 7 days in a row. i believe that in each of us sleeps a prehistoric human, who awakens when placed in the right context.</p>
 
     <p>people were making a great effort for a divine, distant, abstract, and absurd goal. i see in this my artistic superpower of being able to inspire people to this. for those ten days, i became a construction site manager. i had to play a role, motivate people even when i’m disappointed, give orders even when i don’t know what to do, resolve conflicts every day. a role, or a part of myself previously hidden? </p>
 
@@ -151,24 +182,102 @@
 
     <h3>new spirituality</h3>
 
-    <p>this pyramid is part of my ongoing research into the notion i call new spirituality, in which questioning around God is often raised.</p>
+    <p>this <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span> is part of my ongoing research into the notion i call new spirituality, in which questioning around God is often raised.</p>
 
     <p>after the death of God observed by Nietzsche in the nineteenth century, i observe, and reflect in my practice, his resurrection. a resurrection in quantum superposition. in my view, today God is alive, dead, and resurrected at the same time. alive, because supernatural forces have been part of human life since prehistory. the needs that religion fulfilled for human beings have not disappeared. dead, because after the scientific discoveries of the last centuries, even those who believe in God no longer think of him as a bearded man on a cloud who rules everyone, as he was represented in popular western iconography.</p>
 
     <p>we understand why religion and the church exist. we have an idea of what the big bang is and of the theory of evolution. but his life and his death are no longer in conflict. that is why i observe his resurrection in quantum superposition.</p>
 
-    <p>the fact that i know it is the repetitive manner of a choral that brings me into a state of trance does not prevent me from letting myself go into this state. the fact that i know that i am made of atoms does not prevent me from feeling the sublime, the divine, and the spiritual. the concept of God being alive, dead, and resurrected at the same time refers us to the christian paradigm: the life, death, and resurrection of Jesus. and the trinity of the father, the son, and the holy spirit, each of whom is God in his entirety. quantum superposition. each of the three persons exists only in union with the other two, in a perfect relationship of love. maybe that’s why pyramid has three sides and not four.</p>
+    <p>the fact that i know it is the repetitive manner of a choral that brings me into a state of trance does not prevent me from letting myself go into this state. the fact that i know that i am made of atoms does not prevent me from feeling the sublime, the divine, and the spiritual. the concept of God being alive, dead, and resurrected at the same time refers us to the christian paradigm: the life, death, and resurrection of Jesus. and the trinity of the father, the son, and the holy spirit, each of whom is God in his entirety. quantum superposition. each of the three persons exists only in union with the other two, in a perfect relationship of love. maybe that’s why <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span> has three sides and not four.</p>
 
     <p>in my practice, i have no goal of following the logic of a specific religion or culture. i grew up in Russia, listening to American jazz, Colombian cumbia, and Boney M. my mother was interested in buddhism, coming from a family bearing traces of jewish tradition and having been baptized in Russian orthodoxy. my father was strictly atheist. my best friend from kindergarten and middle school was the daughter of an orthodox priest. with them i spent all my days after school, and of course i knew all the prayers by heart. in all this mixture of cultures, i formed my identity. eventually, i invented my own polytheistic religion at the age of eleven. its symbolism is reflected in my current artistic practice, and i sometimes still draw its sign on my hand to this day. in my productions, i refer to everything and to nothing at the same time. superposition and oscillation.</p>
 
     <p>like an artificial intelligence, i digest all my experience and produce an object that represents everything and nothing at the same time. i try to represent the collective experience through my own perspective. the experience of living in a world that changes every day, i try to find the eternal in the ephemeral. just as (Mark Rothko)#21 found the sacred in color and (James Turrell)#22 found it in light, i find it in fragile and precarious matter.</p>
 
     </div>
-    <div class="col right-fixed container m-4 p-4 text-center"> <tag id="rightWord">pyramid</tag> </div>
+    <div class="col-6 right-fixed container m-4 p-4 text-end">
+      <p>
+        <span  class="highlightRight hookRight" data-value="pyramid">pyramid</span></p>
+      <p>
+        <span class="highlightRight hookRight" data-value="concrete">concrete</span></p>
+      <p>
+<!--        <span class="highlightRight hookRight" data-value="interaction">interaction</span></p>-->
+      <p>
+<!--        <span class="highlightRight hookRight" data-value="material">material</span></p>-->
+      <p>
+        <span class="highlightRight hookRight" data-value="recycle">recycle</span></p>
+      <p>
+<!--        <span class="highlightRight hookRight" data-value="represent">represent</span></p>-->
+      <p>
+        <span class="highlightRight hookRight" data-value="fragility">fragility</span></p>
+      <p>
+<!--        <span class="highlightRight hookRight" data-value="fragile">fragile</span></p>-->
+      <p>
+        <span class="highlightRight hookRight" data-value="spirituality">spirituality</span></p>
+      <p>
+<!--        <span class="highlightRight hookRight" data-value="symbol">symbol</span></p>-->
+      <p>
+<!--        <span class="highlightRight hookRight" data-value="mythology">mythology</span></p>-->
+      <p>
+<!--        <span class="highlightRight hookRight" data-value="mythologies">mythologies</span></p>-->
+      <p>
+<!--        <span class="highlightRight hookRight" data-value="object">object</span></p>-->
+      <p>
+        <span class="highlightRight hookRight" data-value="construct">construct</span></p>
+      <p>
+<!--        <span class="highlightRight hookRight" data-value="architect">architect</span></p>-->
+      <p>
+<!--        <span class="highlightRight hookRight" data-value="gather">gather</span></p>-->
+      <p>
+<!--        <span class="highlightRight hookRight" data-value="force">force</span></p>-->
+      <p>
+        <span class="highlightRight hookRight" data-value="abandoned">abandoned</span></p>
+      <p>
+<!--        <span class="highlightRight hookRight" data-value="cult">cult</span></p>-->
+      <p>
+        <span class="highlightRight hookRight" data-value="beam">beam</span></p>
+      <p>
+<!--        <span class="highlightRight hookRight" data-value="oscillate">oscillate</span></p>-->
+      <p>
+        <span class="highlightRight hookRight" data-value="oscillation">oscillation</span></p>
+      <p>
+<!--        <span class="highlightRight hookRight" data-value="oscillating">oscillating</span></p>-->
+      <p>
+        <span class="highlightRight hookRight" data-value="geometry">geometry</span></p>
+      <p>
+        <span class="highlightRight hookRight" data-value="friend">friend</span></p>
+      <p>
+        <span class="highlightRight hookRight" data-value="seven">seven</span></p>
+      <p>
+<!--        <span class="highlightRight hookRight" data-value="7">7</span></p>-->
+      <p>
+        <span class="highlightRight hookRight" data-value="three">three</span></p>
+      <p>
+<!--        <span class="highlightRight hookRight" data-value="prehistoric">prehistoric</span></p>-->
+      <p>
+<!--        <span class="highlightRight hookRight" data-value="prehistory">prehistory</span></p>-->
+      <p>
+<!--        <span class="highlightRight hookRight" data-value="perform">perform</span></p>-->
+      <p>
+        <span class="highlightRight hookRight" data-value="performance">performance</span></p>
+      <p>
+<!--        <span class="highlightRight hookRight" data-value="performer">performer</span></p>-->
+      <p>
+        <span class="highlightRight hookRight" data-value="god">god</span></p>
+      <p>
+        <span class="highlightRight hookRight" data-value="superposition">superposition</span></p>
+      <p>
+        <span class="highlightRight hookRight" data-value="religion">religion</span></p>
+    </div>
   </div>
 </div>
 
+<svg class="link-line" id="link" style="z-index: -20">
+</svg>
+
 <script src="artPage.js"></script>
+<script src="visualLink.js"></script>
+<script src="visualLink.js"></script>
 <script src="menuArt.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
