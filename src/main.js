@@ -15,7 +15,7 @@ const loader = new GLTFLoader();
 
 let pyramid;
 
-loader.load( 'static/pyramid.glb', function ( gltf ) {
+loader.load(`${import.meta.env.BASE_URL}static/pyramid.glb`, function (gltf) {
     console.log(gltf)
     pyramid = gltf.scene;
     pyramid.traverse((child) => {
