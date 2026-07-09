@@ -11,53 +11,87 @@
     <div  class="scroll-container" id="scrollContainer">
     <div class="newPage" id="startPage"></div>
     <div class="newPage">
-        <h1 id="titre">ART PROJECT IN ABANDONED VILLAGE</h1>
-        <div class="content">
-            <p>
-                art project in abandoned village (APAV) is an association that united young artists to give them the possibility to create.
-                we promote, produce, and diffuse in situ artistic projects.
-            </p>
-            <p>
-                our goal is to enhance natural, architectural, and landscape heritage through contemporary creation.
-            </p>
-        </div>
-    </div>
-    <div class="newPage">
         <div class="h-container" id="slider">
             <section class="h-page" id="artPage">
-                <button class="border-0 back position-absolute top-0 end-0 me-3 mt-4 p-2"
-                        style="z-index: 5; text-decoration:none; padding:0.2rem 0.5rem; background:#000; color:#02ff00;">
-                    back
-                </button>
                 <iframe
                         src="./artPage.html"
                         class="art-frame"
                         frameborder="0">
                 </iframe>
+                <button
+                        type="button"
+                        id="artBack"
+                        onclick="
+                                container.scrollTo({
+                                    left: Math.max(0, Math.min(pages.length - 1, 1)) * window.innerWidth,
+                                    behavior: 'smooth'
+                                });"
+                        class="button back border-0 position-absolute top-0 end-0 me-3 mt-4 p-2">
+                    back
+                </button>
             </section>
             <section class="h-page">
-                <h1>project #1</h1>
-                <div class="row mt-5 pt-5">
-                    <div class="col d-flex justify-content-center align-items-center">
-                        <button id="art" style="z-index: 5; text-decoration:none; background:#000; color:#02ff00;">art</button>
+                <h1 id="titre">ART PROJECT IN ABANDONED VILLAGE</h1>
+                <div class="content">
+                    <div class="contentLeft">
+                        <p>
+                            art project in abandoned village (APAV) is an association situated in Paris that unites young artists to give them the possibility to create.
+                            we promote, produce, and diffuse in situ artistic projects.
+                        </p>
+                        <p>
+                            our goal is to enhance natural, architectural, and landscape heritage through contemporary creation.
+                        </p>
+
+                        <div>
+                            <br>
+                            <br>
+                            <br>
+                            <button id="tech" class="button">upcoming projects</button>
+<!--                            <button id="" class="button">join us</button>-->
+                            <button id="art" class="button">past project</button>
+                            <a class="link" href="https://www.instagram.com/artprojectinanabandonedvillage/"><button id="insta" class="button">instagram</button></a>
+                        </div>
                     </div>
-                    <div class="col d-flex justify-content-center align-items-center">
-                        <button id="tech" style="z-index: 5; text-decoration:none; background:#000; color:#02ff00;">tech</button>
+
+                    <div class="contentRight">
+                        <div class="contentSideHeader">
+                            <p>initiators:</p>
+                        </div>
+                        <div class="teamGrid">
+                            <img src="./public/static/team/alina-happy.jpg" alt="team member">
+                            <img src="./public/static/team/seva-happy.jpg" alt="team member">
+                            <!--                    <img src="img/person3.jpg" alt="team member">-->
+                            <!--                    <img src="img/person4.jpg" alt="team member">-->
+                            <!--                    <img src="img/person5.jpg" alt="team member">-->
+                            <!--                    <img src="img/person6.jpg" alt="team member">-->
+                        </div>
                     </div>
                 </div>
             </section>
-            <section class="h-page">
-                <button class="btn btn-primary back">back</button>
+            <section id="nextProject" class="h-page">
+                <div class="comingPage">
+                    <div class="comingSoon">
+                        <p>coming soon</p>
+                    </div>
+                    <button
+                            id="newBack"
+                            onclick="
+                                    container.scrollTo({
+                                        left: Math.max(0, Math.min(pages.length - 1, 1)) * window.innerWidth,
+                                        behavior: 'smooth'
+                                    });"
+                            style="position: absolute;"
+                            class="button back">
+                        back
+                    </button>
+                </div>
             </section>
         </div>
     </div>
-    <div class="newPage">
-        <h1>Hi</h1>
-    </div>
     </div>
 
-    <script src="./hscroll.js"></script>
-    <script type="module" src="./src/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script type="module" src="./src/main.js"></script>
+    <script src="./hscroll.js"></script>
 </body>
 </html>
