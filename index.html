@@ -25,7 +25,9 @@
                                 container.scrollTo({
                                     left: Math.max(0, Math.min(pages.length - 1, 1)) * window.innerWidth,
                                     behavior: 'smooth'
-                                });"
+                                }); scrollContainer.style.overflowY = 'auto';
+    document.body.style.overflowY = 'auto';
+    document.documentElement.style.overflowY = 'auto';"
                         class="button back border-0 position-absolute top-0 end-0 me-3 mt-4 p-2">
                     back
                 </button>
@@ -79,7 +81,9 @@
                                     container.scrollTo({
                                         left: Math.max(0, Math.min(pages.length - 1, 1)) * window.innerWidth,
                                         behavior: 'smooth'
-                                    });"
+                                    }); scrollContainer.style.overflowY = 'auto';
+    document.body.style.overflowY = 'auto';
+    document.documentElement.style.overflowY = 'auto';"
                             style="position: absolute;"
                             class="button back">
                         back
