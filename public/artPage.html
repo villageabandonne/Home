@@ -5,7 +5,124 @@
     <title>artPage</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <style>
-      #toc a {
+        .artLayout {
+            display: flex;
+            gap: 80px;
+            padding: 0 70px 40px 70px;
+        }
+
+        .left-scroll {
+            width: 70%;
+            max-width: 900px;
+        }
+
+        .right-fixed {
+            position: fixed;
+            top: 20%;
+            right: 5%;
+            width: 220px;
+        }
+        @media (max-width: 768px) {
+            .right-fixed,
+            .link-line{
+                display: none !important;
+            }
+
+            #toc {
+                display: flex !important;
+                position: fixed;
+                bottom: auto !important;
+                top: 0;
+                left: 0;
+
+                width: 80vw;
+                height: 80px !important;
+
+                padding: 10px 12px !important;
+                gap: 8px !important;
+
+                background: white;
+                z-index: 999;
+
+                overflow-x: auto;
+                overflow-y: hidden;
+                white-space: nowrap;
+
+                border-top: 1px solid #ddd;
+            }
+
+            #toc a {
+                flex: 0 0 auto;
+                font-size: 14px;
+                padding: 6px 10px;
+                background: #eeeeee;
+                color: #242630;
+                text-decoration: none;
+            }
+
+            #toc a.active {
+                background: #02ff00;
+                color: #000;
+            }
+
+
+            .container-fluid {
+                padding: 0 !important;
+                margin: 0 !important;
+                width: 100% !important;
+            }
+
+            #linkedContainers {
+                display: block !important;
+                width: 100% !important;
+                max-width: none !important;
+                margin: 0 !important;
+                padding: 0 15px 100px 30px !important
+            }
+
+            .left-scroll,
+            #text {
+                width: 100% !important;
+                max-width: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                flex: none !important;
+            }
+
+            #text {
+                font-size: 14px;
+                line-height: 1.45;
+            }
+
+            #text p,
+            #text ol {
+                margin-bottom: 16px;
+            }
+
+            h1 {
+                font-size: 1.8rem !important;
+                line-height: 1.1;
+                text-align: start;
+                margin: 100px 60px 35px 0 !important;
+                padding: 0 !important;
+            }
+
+            #text h3 {
+                margin-top: 35px;
+                font-size: 1.4rem;
+            }
+        }
+      #toc {
+          background: #fff;
+          height: 10vh;
+          width: 100%;
+          position: fixed;
+          top: 0;
+          z-index: 999;
+          overflow-x: auto;
+          white-space: nowrap;"
+      }
+        #toc a {
         text-decoration: none;
         color: #333;
         padding: 0.2rem 0.5rem;
@@ -83,15 +200,15 @@
     </style>
 </head>
 <body>
-<div id="toc" class="d-flex gap-4 align-items-center px-3" style="background: #fff; height: 10vh; width: 100%; position: fixed; top: 0; z-index: 999; overflow-x: auto; white-space: nowrap;">
+<div id="toc" class="d-flex gap-4 align-items-center px-3">
 <!--  <button class="border-0 back position-fixed end-0 me-3 back" style="text-decoration: none; padding: 0.2rem 0.5rem; background: #000; color: #02ff00">back</button>-->
 </div>
 
 <h1 class="mt-5 pt-5 pb-5" style="z-index: 100; background: #fff;">pyramid. artistic description</h1>
 
 <div class="container-fluid vh-100 mt-0 pt-0">
-  <div class="row h-100 container mt-0 pt-0 m-5 p-5" id="linkedContainers">
-    <div class="col-6 left-scroll container mt-0 pt-0 m-4 p-4" id="text" >
+    <div class="artLayout" id="linkedContainers">
+        <div class="left-scroll" id="text">
     <p>it is my first <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span>. it is the skeleton of a <span class="highlight" data-value="pyramid">pyramid</span><span class="hookLeft" data-value="pyramid"></span> without skin, with all its organs easily visible.</p>
 
     <p>the skeleton is made of concrete beams, assembled in the most constructively stable geometric form, the tetrahedron. its organs are made of recovered objects suspended at its center. this object is conceived and built by myself with my six friends, who agreed to go to a semi-abandoned village to build something completely useless, working for free six hours a day in 35-degree heat.</p>
@@ -195,7 +312,7 @@
     <p>like an artificial intelligence, i digest all my experience and produce an object that represents everything and nothing at the same time. i try to represent the collective experience through my own perspective. the experience of living in a world that changes every day, i try to find the eternal in the ephemeral. just as (Mark Rothko)#21 found the sacred in color and (James Turrell)#22 found it in light, i find it in fragile and precarious matter.</p>
 
     </div>
-    <div class="col-6 right-fixed container m-4 p-4 text-end">
+        <div class="right-fixed text-end">
       <p>
         <span  class="highlightRight hookRight" data-value="pyramid">pyramid</span></p>
       <p>
