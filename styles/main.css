@@ -1,4 +1,9 @@
-body { margin: 0; }
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
 .scroll-container {
     height: 100vh;
     /*overflow: hidden;*/
@@ -69,14 +74,92 @@ body { margin: 0; }
 .contentSideHeader p {
     margin: 0;
 }
+/*@media (max-width: 768px) {*/
+/*    .contentWrapper {*/
+/*        flex-direction: column;*/
+/*    }*/
+
+/*    .contentLeft,*/
+/*    .contentRight {*/
+/*        width: 100%;*/
+/*    }*/
+/*}*/
+
 @media (max-width: 768px) {
-    .contentWrapper {
+    .scroll-container {
+        height: 100vh;
+        overflow-y: scroll;
+    }
+
+    .newPage {
+        height: 100vh;
+    }
+
+    .h-container {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .h-page {
+        flex: 0 0 100vw;
+        height: 100vh;
+        overflow-y: auto;
+    }
+
+    #titre {
+        font-size: 4em;
+        line-height: 0.75em;
+        left: -5px;
+        margin-bottom: 30px;
+    }
+
+    .content {
+        margin: 40px 20px 0 20px;
         flex-direction: column;
+        gap: 30px;
     }
 
     .contentLeft,
     .contentRight {
         width: 100%;
+    }
+
+    .contentRight {
+        align-items: flex-start;
+    }
+
+    .teamGrid {
+        grid-template-columns: repeat(2, 80px);
+        gap: 16px;
+    }
+
+    .teamGrid img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .button {
+        display: inline-block;
+        margin: 4px 2px;
+        font-size: 14px;
+    }
+
+    #artBack {
+        position: absolute !important;
+        top: 15px;
+        right: 15px;
+        z-index: 100;
+    }
+
+    #newBack {
+        top: 15px;
+        left: 15px;
+    }
+
+    .art-frame {
+        width: 100%;
+        height: 100vh;
     }
 }
 .teamGrid {
